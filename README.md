@@ -50,7 +50,6 @@ As many developers know, projects like this are built in spare time! If you find
 
 [![Checkout my blog][badge_blog]][link_blog]
 [![LinkedIn Profile][badge_linkedin]][link_linkedin]
-[![Link Mastodon][badge_mastodon]][link_mastodon]
 [![Follow me on Twitter][badge_twitter]][link_twitter]
 
 
@@ -68,9 +67,7 @@ As many developers know, projects like this are built in spare time! If you find
 
 [badge_blog]: https://img.shields.io/badge/blog-dotnetthoughts.net-blue?style=for-the-badge
 [badge_linkedin]: https://img.shields.io/badge/LinkedIn-anurajp-blue?style=for-the-badge&logo=linkedin
-[badge_mastodon]: https://img.shields.io/mastodon/follow/109502876771613420?domain=https%3A%2F%2Fdotnet.social&label=%40anuraj%40dotnet.social&logo=mastodon&logoColor=white&style=for-the-badge
 [badge_twitter]: https://img.shields.io/badge/follow-%40anuraj-1DA1F2?logo=twitter&style=for-the-badge&logoColor=white
 [link_blog]: https://dotnetthoughts.net/
 [link_linkedin]: https://www.linkedin.com/in/anurajp/
-[link_mastodon]: https://dotnet.social/@anuraj
 [link_twitter]: https://twitter.com/anuraj
