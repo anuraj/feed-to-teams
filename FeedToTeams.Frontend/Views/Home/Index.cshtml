@@ -1,0 +1,74 @@
+﻿@model Feed
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (User.Identity!.IsAuthenticated)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header">
+                        Available feeds
+                        <div id="feedsLoading" class="spinner-border spinner-border-sm" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="list-group" id="feedList">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+    </div>
+}
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCreateForm">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Configure Feed</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form method="post" id="CreateForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label class="form-label">RSS Feed URL</label>
+                <input type="url" id="rssurl" name="rssurl" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Select the Team</label>
+                <div id="teamsLoading" class="spinner-border spinner-border-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <select class="form-select" id="teams" name="teams" required>
+                    <option selected>Select team</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Select the Channel</label>
+                <div id="channelsLoading" class="spinner-border spinner-border-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <select class="form-select" id="channels" name="channels" required>
+                    <option selected>Select channel</option>
+                </select>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Save Changes" />
+            <input type="reset" class="btn btn-secondary" value="Cancel" data-bs-dismiss="offcanvas" />
+        </form>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script>
+        var GetJoinedTeamsEndpoint = "@Url.Action("GetJoinedTeams", "Home")";
+        var GetChannelsByIdEndpoint = "@Url.Action("GetChannelsById", "Home")";
+        var CreateFeedEndpoint = "@Url.Action("CreateFeed", "Home")";
+        var GetFeedsEndpoint = "@Url.Action("GetFeeds", "Home")";
+        var SendFeedEndpoint = "@Url.Action("SendFeedToTeamsChannel", "Home")";
+    </script>
+}

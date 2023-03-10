@@ -348,3 +348,14 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+appsettings.Development.json
+
+__azurite*
+
+__blobstorage__
+
+local.settings.json
+
+.vscode
+.vs
+.sarif
