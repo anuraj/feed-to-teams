@@ -149,7 +149,7 @@ public class HomeController : Controller
                             Title = "Share To Facebook",
                             Text = "Share To Facebook",
                             DisplayText = "Share To Facebook",
-                            Value = $"https://www.facebook.com/sharer.php?u={feedItem.Links.FirstOrDefault().Uri.ToString()}&t={feedItem.Title.Text}"
+                            Value = $"https://www.facebook.com/sharer.php?u={feedItem.Links.FirstOrDefault().Uri}&t={feedItem.Title.Text}"
                         },
                         new Button
                         {
@@ -157,7 +157,7 @@ public class HomeController : Controller
                             Title = "Share To Twitter",
                             Text = "Share To Twitter",
                             DisplayText = "Share To Twitter",
-                            Value = $"https://twitter.com/intent/tweet?url={feedItem.Links.FirstOrDefault().Uri.ToString()}&text={feedItem.Title.Text}"
+                            Value = $"https://twitter.com/intent/tweet?url={feedItem.Links.FirstOrDefault().Uri}&text={feedItem.Title.Text}"
                         },
                         new Button
                         {
@@ -165,7 +165,7 @@ public class HomeController : Controller
                             Title = "Share To LinkedIn",
                             Text = "Share To LinkedIn",
                             DisplayText = "Share To LinkedIn",
-                            Value = $"https://www.linkedin.com/shareArticle?mini=true&url={feedItem.Links.FirstOrDefault().Uri.ToString()}&title={feedItem.Title.Text}&summary={feedItem.Summary.Text}"
+                            Value = $"https://www.linkedin.com/shareArticle?mini=true&url={feedItem.Links.FirstOrDefault().Uri}&title={feedItem.Title.Text}&summary={feedItem.Summary.Text}"
                         },
                         new Button
                         {
@@ -173,7 +173,7 @@ public class HomeController : Controller
                             Title = "Share To WhatsApp",
                             Text = "Share To WhatsApp",
                             DisplayText = "Share To WhatsApp",
-                            Value = $"https://wa.me/?text={feedItem.Title.Text} - {feedItem.Links.FirstOrDefault().Uri.ToString()}"
+                            Value = $"https://wa.me/?text={feedItem.Title.Text} - {feedItem.Links.FirstOrDefault().Uri}"
                         }
                     }
                 };
