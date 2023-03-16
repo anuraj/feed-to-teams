@@ -11,6 +11,7 @@ using System.Xml;
 using System.ServiceModel.Syndication;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using System.Net;
 
 namespace FeedToTeams.Frontend.Controllers;
 
@@ -149,7 +150,7 @@ public class HomeController : Controller
                             Title = "Share To Facebook",
                             Text = "Share To Facebook",
                             DisplayText = "Share To Facebook",
-                            Value = $"https://www.facebook.com/sharer.php?u={feedItem.Links.FirstOrDefault().Uri}&t={feedItem.Title.Text}"
+                            Value = $"https://www.facebook.com/sharer.php?u={WebUtility.UrlEncode(feedItem.Links.FirstOrDefault().Uri.ToString())}&t={WebUtility.UrlEncode(feedItem.Title.Text)}"
                         },
                         new Button
                         {
@@ -157,7 +158,7 @@ public class HomeController : Controller
                             Title = "Share To Twitter",
                             Text = "Share To Twitter",
                             DisplayText = "Share To Twitter",
-                            Value = $"https://twitter.com/intent/tweet?url={feedItem.Links.FirstOrDefault().Uri}&text={feedItem.Title.Text}"
+                            Value = $"https://twitter.com/intent/tweet?url={WebUtility.UrlEncode(feedItem.Links.FirstOrDefault().Uri.ToString())}&text={WebUtility.UrlEncode(feedItem.Title.Text)}"
                         },
                         new Button
                         {
@@ -165,7 +166,7 @@ public class HomeController : Controller
                             Title = "Share To LinkedIn",
                             Text = "Share To LinkedIn",
                             DisplayText = "Share To LinkedIn",
-                            Value = $"https://www.linkedin.com/shareArticle?mini=true&url={feedItem.Links.FirstOrDefault().Uri}&title={feedItem.Title.Text}&summary={feedItem.Summary.Text}"
+                            Value = $"https://www.linkedin.com/shareArticle?mini=true&url={WebUtility.UrlEncode(feedItem.Links.FirstOrDefault().Uri.ToString())}&title={WebUtility.UrlEncode(feedItem.Title.Text)}&summary={WebUtility.UrlEncode(feedItem.Summary.Text)}"
                         },
                         new Button
                         {
@@ -173,7 +174,7 @@ public class HomeController : Controller
                             Title = "Share To WhatsApp",
                             Text = "Share To WhatsApp",
                             DisplayText = "Share To WhatsApp",
-                            Value = $"https://wa.me/?text={feedItem.Title.Text} - {feedItem.Links.FirstOrDefault().Uri}"
+                            Value = $"https://wa.me/?text={WebUtility.UrlEncode(feedItem.Title.Text)} - {WebUtility.UrlEncode(feedItem.Links.FirstOrDefault().Uri.ToString())}"
                         }
                     }
                 };
